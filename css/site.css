@@ -1,24 +1,54 @@
-body {
-  margin: 0;
-}
-
-.working {
+.project {
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 100vh;  
   background-color: #f17537;
 }
 
-.container {  
+.working {
+  height: 384px;
+  width: 100%;
   display: inherit;
+  flex-wrap: inherit;
   align-items: inherit;
   justify-content: inherit;
-  width: 100%;
+  background-color: #ffffff;
+}
+
+.container {
+  display: inherit;
+  flex-wrap: inherit;
+  align-items: inherit;
+  justify-content: inherit;
+  max-width: 1024px;
+  height: 100%;
+}
+
+.working .container img {
+  max-height: 100%;
+}
+
+.working .container .message {
+  height: 100%;
+  display: inherit;
+  justify-content: center;
+  align-items: center;
   background-color: white;
 }
 
-.container img {
-  max-width: 800px;
-  height: auto;
+.message h1 {
+  text-align: center;
+  margin: 25px;
+}
+
+@media screen and (max-width: 768px) {
+  .working .container .message {
+    display: none;
+  }
+
+  .working .container img {
+    max-width: 100%;
+  }
 }
