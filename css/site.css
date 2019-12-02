@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+}
+
+.working {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f17537;
+}
+
+.container {  
+  display: inherit;
+  align-items: inherit;
+  justify-content: inherit;
+  width: 100%;
+  background-color: white;
+}
+
+.container img {
+  max-width: 800px;
+  height: auto;
+}
