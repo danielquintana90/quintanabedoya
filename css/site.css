@@ -1,54 +1,103 @@
-.project {
+body {
+  color: #333;
+  font-size: 14px;
+  line-height: 1.3;
+  font-family: 'Gelasio', serif;
+}
+
+section.profile {
+  background-color: #305b90;
+  background: -webkit-linear-gradient(315deg, #305b90 0%, #305b90 30%, #529bf5 100%) fixed;
+  background: linear-gradient(135deg, #305b90 0%, #305b90 30%, #529bf5 100%) fixed;
+  height: 100vh;
+}
+
+.profile {
   display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
   justify-content: center;
-  height: 100vh;  
-  background-color: #f17537;
+  align-content: center;
+  align-items: center;
 }
 
-.working {
-  height: 384px;
-  width: 100%;
-  display: inherit;
-  flex-wrap: inherit;
-  align-items: inherit;
-  justify-content: inherit;
-  background-color: #ffffff;
-}
-
-.container {
-  display: inherit;
-  flex-wrap: inherit;
-  align-items: inherit;
-  justify-content: inherit;
-  max-width: 1024px;
-  height: 100%;
-}
-
-.working .container img {
-  max-height: 100%;
-}
-
-.working .container .message {
-  height: 100%;
+.profile-content {
   display: inherit;
   justify-content: center;
-  align-items: center;
+  width: 620px;
+  max-height: 445px;
   background-color: white;
+  border-radius: 4px;
+  flex-direction: column;
+  margin-top: 40px;
 }
 
-.message h1 {
+.head .image {
+  width: 120px;
+  height: 120px;
+  background-image: url(../images/danielquintana.jpg);
+  background-size: cover;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center center;
+  margin: -60px auto 20px;
+}
+
+.name-headline {
+  font-weight: 700;
   text-align: center;
-  margin: 25px;
 }
 
-@media screen and (max-width: 768px) {
-  .working .container .message {
-    display: none;
-  }
+.name-headline .name h1 {
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+}
 
-  .working .container img {
-    max-width: 100%;
-  }
+.name-headline .headline {
+  margin-top: 5px;
+}
+
+.name-headline .headline span {
+  font-size: 16px;
+  margin: 0;
+}
+
+.profile-content .body {
+  height: 100%;
+  width: 450px;
+  margin: 0 auto;
+}
+
+.profile-content .body .spotlight {
+  text-align: center;
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 30px 0;
+  justify-content: center;
+}
+
+.profile-content .body .spotlight .social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.social img {
+  height: 40px;
+  width: 40px;
+  cursor: pointer;
+}
+
+.profile-content .body .bio {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.profile-content .body .bio p {
+  text-align: justify;
+  font-size: 16px;
+  line-height: 1.5;
 }
