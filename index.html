@@ -35,6 +35,9 @@
               <div class="social">
                 <img src="icons/github.svg" alt="github-icon" id="github" title="GitHub"/>
               </div>
+              <div class="social">
+                <img src="icons/medium.svg" alt="medium-icon" id="medium" title="Medium"/>
+              </div>
             </div>
 
             <div class="bio">              
@@ -50,8 +53,10 @@
     <script>
       const openSocial = (event, type) => {
         let url;
+        
         let urlLinkedin = 'https://www.linkedin.com/in/danielquintanabedoya';
         let urlGithub = 'https://github.com/DanielQuintana90';
+        let urlMedium = 'https://medium.com/@danielquintana90';
 
         switch (type) {
           case 'linkedin':
@@ -60,6 +65,9 @@
           case 'github':
             url = urlGithub;
             break;
+          case 'medium':
+            url = urlMedium;
+            break;
         }
 
         window.open(url, '_blank');
@@ -67,9 +75,11 @@
 
       const linkedin = document.querySelector('#linkedin');
       const github = document.querySelector('#github');
+      const medium = document.querySelector('#medium');
 
       linkedin.addEventListener('click', event => openSocial(event, 'linkedin'));
       github.addEventListener('click', event => openSocial(event, 'github'));
+      medium.addEventListener('click', event => openSocial(event, 'medium'));
     </script>
   </body>
 </html>
