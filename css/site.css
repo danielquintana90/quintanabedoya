@@ -29,12 +29,18 @@ body {
 .head .image {
   width: 120px;
   height: 120px;
-  background-image: url(../images/danielquintana.jpg);
+  background-image: url(../images/danielquintana-formal.jpg);
   background-size: cover;
   border-radius: 50%;
   background-repeat: no-repeat;
   background-position: center center;
   margin: -60px auto 20px;
+  cursor: none;  
+}
+
+.head .image:hover {  
+  background-image: url(../images/danielquintana-informal.jpg);
+  cursor: none;  
 }
 
 .name-headline {
