@@ -20,7 +20,7 @@ body {
   display: inherit;
   justify-content: center;
   width: 620px;
-  max-height: 445px;
+  /*max-height: 445px;*/
   background-color: white;
   border-radius: 4px;
   flex-direction: column;
@@ -155,7 +155,7 @@ body {
 
   .profile-content {
     width: 350px;
-    max-height: 600px;
+    /*max-height: 600px;*/
   }
 
   .profile-content .body .spotlight {
