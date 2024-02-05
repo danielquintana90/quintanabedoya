@@ -1,183 +1,42 @@
-body {
-  color: #333;
-  font-size: 14px;
-  line-height: 1.3;
-  font-family: 'Gelasio', serif;
-  background-color: #305b90;
-  background: -webkit-linear-gradient(315deg, #305b90 0%, #305b90 30%, #529bf5 100%) fixed;
-  background: linear-gradient(135deg, #305b90 0%, #305b90 30%, #529bf5 100%) fixed;
+.spotlight {
+    text-align: center;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;    
+    justify-content: center;
 }
 
-.profile {
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
-.profile-content {
-  display: inherit;
-  justify-content: center;
-  width: 620px;
-  /*max-height: 445px;*/
-  background-color: white;
-  border-radius: 4px;
-  flex-direction: column;
-}
-
-.head .image {
-  width: 120px;
-  height: 120px;
-  background-image: url(../images/danielquintana-formal.jpg);
-  background-size: cover;
-  border-radius: 50%;
-  background-repeat: no-repeat;
-  background-position: center center;
-  margin: -60px auto 20px;
-  cursor: none;  
-}
-
-.head .image:hover {  
-  background-image: url(../images/danielquintana-informal.jpg);
-  cursor: none;  
-}
-
-.name-headline {
-  font-weight: 700;
-  text-align: center;
-}
-
-.name-headline .name h1 {
-  font-size: 20px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin: 0;
-}
-
-.name-headline .headline {
-  margin-top: 5px;
-}
-
-.name-headline .headline span {
-  font-size: 16px;
-  margin: 0;
-}
-
-.profile-content .body {
-  height: 100%;
-  width: 450px;
-  margin: 0 auto;
-}
-
-.profile-content .body .spotlight {
-  text-align: center;
-  height: 50px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  margin: 30px 0;
-  justify-content: center;
-}
-
-.profile-content .body .spotlight .social {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 10px;
+.spotlight .social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 10px;
 }
 
 .social img {
-  height: 40px;
-  width: 40px;
-  cursor: pointer;
-}
-
-.profile-content .body .bio {
-  width: 100%;
-  margin-bottom: 40px;
-}
-
-.profile-content .body .bio p {
-  text-align: justify;
-  font-size: 16px;
-  line-height: 1.5;
+    height: 35px;
+    width: 35px;
+    cursor: pointer;
 }
 
 /* Animation */
 
 .fadeIn {
-  animation-name: fadeIn;
-  -webkit-animation-name: fadeIn;
-  animation-duration: 2s;
-  -webkit-animation-duration: 2s;
-  animation-fill-mode: 2s;
-  -webkit-animation-fill-mode: 2s;
+    animation-name: fadeIn;
+    -webkit-animation-name: fadeIn;
+    animation-duration: 2s;
+    -webkit-animation-duration: 2s;
+    animation-fill-mode: 2s;
+    -webkit-animation-fill-mode: 2s;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
+    from {
+        opacity: 0;
+    }
 
-/* Mobile */
-
-@media screen and (max-width: 768px) {
-  .profile {
-    padding-top: 40px;
-  }
-
-  .profile-content .body .bio {
-    margin-bottom: 0;
-  }
-}
-
-@media screen and (max-width: 425px) {
-  .profile {
-    padding-top: 60px;
-  }
-
-  .head .image {
-    margin: 20px auto 10px;
-  }
-
-  .profile-content .body .spotlight .social {
-    margin: 0 10px;
-  }
-
-  .profile-content .body {
-    width: 320px;
-  }
-
-  .profile-content {
-    width: 350px;
-    /*max-height: 600px;*/
-  }
-
-  .profile-content .body .spotlight {
-    margin: 10px 0;
-  }
-
-  .head .image {
-    margin: -60px auto 20px;
-  }
-}
-
-@media screen and (max-width: 320px) {
-  .profile {
-    padding-top: 90px;
-    padding-bottom: 45px;
-  }
-
-  .profile-content {
-    width: 280px;
-  }
-
-  .profile-content .body {
-    width: 250px;
-  }
+    to {
+        opacity: 1;
+    }
 }
