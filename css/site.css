@@ -3,7 +3,7 @@
     height: 50px;
     width: 100%;
     display: flex;
-    align-items: center;    
+    align-items: center;
     justify-content: center;
 }
 
@@ -20,15 +20,41 @@
     cursor: pointer;
 }
 
+.background-behavior {
+    background-image: url(../images/background.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media (max-width: 576px) {
+    .background-behavior {
+        background-size: auto;
+    }
+}
+
+.row-margin-mobile {
+    margin: auto;
+}
+
+@media (max-width: 576px) {
+    .row-margin-mobile {
+        margin: 0 5px;
+    }
+}
+
+.card-background-color {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
 /* Animation */
 
 .fadeIn {
     animation-name: fadeIn;
     -webkit-animation-name: fadeIn;
-    animation-duration: 2s;
-    -webkit-animation-duration: 2s;
-    animation-fill-mode: 2s;
-    -webkit-animation-fill-mode: 2s;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    animation-fill-mode: 1s;
+    -webkit-animation-fill-mode: 1s;
 }
 
 @keyframes fadeIn {
