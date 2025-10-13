@@ -1,3 +1,36 @@
+// Dark Mode Toggle
+const themeToggle = document.getElementById('theme-toggle');
+const htmlElement = document.documentElement;
+
+// Función para aplicar el tema
+function setTheme(theme) {
+    if (theme === 'dark') {
+        htmlElement.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+    } else {
+        htmlElement.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+    }
+}
+
+// Cargar el tema guardado o usar dark por defecto
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    setTheme(savedTheme);
+} else {
+    // Por defecto: Dark Mode
+    setTheme('dark');
+}
+
+// Toggle al hacer click
+themeToggle.addEventListener('click', () => {
+    if (htmlElement.classList.contains('dark-mode')) {
+        setTheme('light');
+    } else {
+        setTheme('dark');
+    }
+});
+
 // Smooth scroll para enlaces internos
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
