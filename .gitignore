@@ -1,0 +1,21 @@
+# OS & Editor files
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Local AI Agent session/settings (keep .agents/ tracked)
+.claude/
+.gemini/
+
+# Node & temporary verification artifacts
+node_modules/
+npm-debug.log*
+shots/
+scratch/
+*.log
+.env
+.env.*

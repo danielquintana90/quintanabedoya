@@ -5,407 +5,853 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Daniel Quintana — Ingeniero DevOps Architect & Full-Stack Developer con más de 13 años de experiencia en arquitecturas escalables, automatización y desarrollo empresarial.">
-    <meta name="keywords" content="DevOps, Full-Stack, Cloud, AWS, Azure, Kubernetes, Docker, Angular, React, .NET">
-    <meta name="author" content="Daniel Quintana">
-    <link rel="icon" href="favicon.ico" type="image/x-icon" />
-    <title>Daniel Quintana | DevOps Architect & Full-Stack Developer</title>
+        content="Daniel André Quintana Bedoya — DevOps Architect y Cloud & Software Solutions Architect. Magíster en DevOps e Ingeniero colegiado con más de 14 años de experiencia diseñando arquitecturas cloud híbridas, CI/CD, IaC y DevSecOps.">
+    <meta name="keywords"
+        content="Daniel Quintana Bedoya, DevOps Architect, Cloud Solutions Architect, Software Solutions Architect, AWS, Azure, Kubernetes, EKS, Terraform, GitLab CI, Jenkins, ArgoCD, DevSecOps, HashiCorp Vault, Prometheus, Grafana, .NET Core">
+    <meta name="author" content="Daniel André Quintana Bedoya">
+    <meta name="color-scheme" content="dark light">
 
-    <!-- Google Fonts -->
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Daniel Quintana Bedoya | DevOps & Cloud Solutions Architect">
+    <meta property="og:description"
+        content="Ingeniero colegiado y Magíster en DevOps con +14 años de experiencia en arquitecturas Cloud (AWS, Azure, On-Premise), automatización CI/CD, IaC con Terraform y orquestación en Kubernetes.">
+    <meta property="og:url" content="https://quintanabedoya.com">
+    <meta property="og:image" content="https://quintanabedoya.com/images/danielquintana-informal.jpg">
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <title>Daniel Quintana Bedoya | DevOps &amp; Cloud Solutions Architect</title>
+
+    <!-- Google Fonts: Space Grotesk, Plus Jakarta Sans & JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
         rel="stylesheet">
 
-    <link rel="stylesheet" href="css/site.css" />
+    <link rel="stylesheet" href="css/site.css">
+
+    <!-- Structured Data (Schema.org Person, privacy-safe) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Daniel André Quintana Bedoya",
+      "jobTitle": "DevOps Architect & Cloud Solutions Architect",
+      "url": "https://quintanabedoya.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Lima",
+        "addressCountry": "PE"
+      },
+      "alumniOf": [
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Escuela de Posgrado Newman"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Pontificia Universidad Católica del Perú"
+        },
+        {
+          "@type": "CollegeOrUniversity",
+          "name": "Universidad Tecnológica del Perú"
+        }
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/danielquintanabedoya",
+        "https://github.com/DanielQuintana90",
+        "https://blog.quintanabedoya.com"
+      ]
+    }
+    </script>
 </head>
 
 <body>
-    <!-- Animated background mesh -->
-    <div class="bg-mesh" aria-hidden="true">
-        <div class="mesh-gradient mesh-1"></div>
-        <div class="mesh-gradient mesh-2"></div>
-        <div class="mesh-gradient mesh-3"></div>
-    </div>
+    <!-- Top Architectural Header Bar -->
+    <header class="site-header" id="main-nav">
+        <div class="header-frame">
+            <a href="#top" class="brand-identity" aria-label="Inicio — Daniel Quintana Bedoya">
+                <span class="brand-monogram">DQ</span>
+                <span class="brand-meta">
+                    <span class="brand-name">Daniel Quintana Bedoya</span>
+                    <span class="brand-role">DevOps &amp; Cloud Architect</span>
+                </span>
+            </a>
 
-    <!-- Floating Navigation -->
-    <nav class="nav" id="main-nav" role="navigation" aria-label="Navegación principal">
-        <div class="nav-inner">
-            <a href="#hero" class="nav-logo" aria-label="Inicio">DQ<span class="nav-logo-dot">.</span></a>
-            <div class="nav-links">
-                <a href="#about" class="nav-link">Sobre Mí</a>
-                <a href="#skills" class="nav-link">Expertise</a>
-                <a href="#credentials" class="nav-link">Educación</a>
-                <a href="#contact" class="nav-link">Contacto</a>
+            <nav class="primary-nav" aria-label="Navegación principal">
+                <a href="#topologia" class="nav-link">Arquitectura</a>
+                <a href="#experiencia" class="nav-link">Trayectoria</a>
+                <a href="#capacidades" class="nav-link">Stack técnico</a>
+                <a href="#formacion" class="nav-link">Formación</a>
+                <a href="#contacto" class="nav-link">Canales</a>
+            </nav>
+
+            <div class="header-controls">
+                <div class="location-readout" aria-label="Ubicación actual">
+                    <span class="status-led" aria-hidden="true"></span>
+                    <span>Lima, PE</span>
+                </div>
+                <button class="theme-switch" id="theme-toggle" type="button" aria-label="Cambiar entre modo oscuro y claro">
+                    <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="4"></circle>
+                        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path>
+                    </svg>
+                    <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
             </div>
-            <button class="theme-toggle" id="theme-toggle" aria-label="Cambiar tema">
-                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="5"></circle>
-                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
-                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
-                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                </svg>
-            </button>
         </div>
-    </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge animate-in">
-                    <span class="badge-dot"></span>
-                    Disponible para nuevos proyectos
-                </div>
+    <main id="top" class="blueprint-shell">
+        <!-- HERO & INTERACTIVE SYSTEM TOPOLOGY -->
+        <section class="hero-blueprint" id="topologia" aria-labelledby="hero-heading">
+            <div class="blueprint-grid hero-grid">
+                <!-- Left Column: Architect Dossier & Positioning -->
+                <div class="hero-dossier">
+                    <div class="dossier-identity">
+                        <figure class="portrait-frame">
+                            <img src="images/danielquintana-informal.jpg"
+                                alt="Retrato de Daniel André Quintana Bedoya"
+                                width="88" height="88" class="portrait-img" fetchpriority="high">
+                            <span class="frame-corner corner-tl" aria-hidden="true"></span>
+                            <span class="frame-corner corner-br" aria-hidden="true"></span>
+                        </figure>
+                        <div class="dossier-credentials">
+                            <span class="credential-badge">Ingeniero Colegiado CIP</span>
+                            <span class="credential-badge">Magíster en DevOps</span>
+                            <span class="credential-badge">AWS / Azure / Hybrid Cloud</span>
+                        </div>
+                    </div>
 
-                <div class="profile-image-wrapper animate-in" style="--delay: 0.1s">
-                    <img src="images/danielquintana-informal.jpg" class="profile-image"
-                        alt="Daniel Quintana — DevOps Architect y Full-Stack Developer" loading="eager">
-                    <div class="profile-glow"></div>
-                </div>
+                    <p class="role-statement">DevOps Architect / Cloud &amp; Software Solutions Architect</p>
 
-                <h1 class="hero-title animate-in" style="--delay: 0.2s">
-                    ¡Hola! Soy <span class="gradient-text">Daniel Quintana</span>
-                </h1>
+                    <h1 id="hero-heading" class="hero-headline">
+                        Arquitectura cloud híbrida, automatización CI/CD y despliegues seguros a escala empresarial.
+                    </h1>
 
-                <p class="hero-subtitle animate-in" style="--delay: 0.3s">
-                    <span class="typed-role">Ingeniero</span>
-                    <span class="role-separator">·</span>
-                    <span class="typed-role">DevOps Architect</span>
-                    <span class="role-separator">·</span>
-                    <span class="typed-role">Full-Stack Developer</span>
-                </p>
+                    <p class="hero-lead">
+                        Soy <strong>Daniel André Quintana Bedoya</strong>. Con más de 14 años en ingeniería de software e
+                        infraestructura, lidero la estandarización de flujos CI/CD, el aprovisionamiento como código
+                        (IaC) y la orquestación de contenedores en entornos AWS, Azure y On-Premise, conectando cada
+                        etapa del ciclo de vida del software con seguridad y observabilidad en producción.
+                    </p>
 
-                <p class="hero-description animate-in" style="--delay: 0.4s">
-                    Magíster e Ingeniero de Sistemas CIP con más de 13 años de experiencia en arquitecturas
-                    escalables, automatización DevOps y desarrollo full-stack para soluciones empresariales.
-                </p>
+                    <div class="hero-telemetry" aria-label="Métricas de trayectoria en producción">
+                        <div class="telemetry-cell">
+                            <span class="telemetry-value">14+ años</span>
+                            <span class="telemetry-label">Diseño de software e infraestructura</span>
+                        </div>
+                        <div class="telemetry-cell">
+                            <span class="telemetry-value">20+ equipos</span>
+                            <span class="telemetry-label">Habilitados con CI/CD y DevSecOps</span>
+                        </div>
+                        <div class="telemetry-cell">
+                            <span class="telemetry-value">Horas a min</span>
+                            <span class="telemetry-label">Reducción en tiempos de despliegue</span>
+                        </div>
+                    </div>
 
-                <div class="hero-actions animate-in" style="--delay: 0.5s">
-                    <a href="#contact" class="btn btn-primary">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                            </path>
-                            <polyline points="22,6 12,13 2,6"></polyline>
-                        </svg>
-                        Hablemos
-                    </a>
-                    <div class="social-links">
+                    <div class="hero-actions">
                         <a href="https://www.linkedin.com/in/danielquintanabedoya" target="_blank"
-                            rel="noopener noreferrer" class="social-btn" aria-label="Perfil de LinkedIn">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            rel="noopener noreferrer" class="btn-solid">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                             </svg>
+                            Conectar en LinkedIn
                         </a>
-                        <a href="https://github.com/DanielQuintana90" target="_blank" rel="noopener noreferrer"
-                            class="social-btn" aria-label="Perfil de GitHub">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-                            </svg>
-                        </a>
-                        <a href="https://blog.quintanabedoya.com" target="_blank" rel="noopener noreferrer"
-                            class="social-btn" aria-label="Blog en Medium">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                <path
-                                    d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="section about" id="about">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">01</span>
-                <h2 class="section-title">Sobre Mí</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-card glass-card">
-                    <p class="about-text">
-                        Soy un ingeniero colegiado con un enfoque especializado en arquitecturas de software
-                        escalables y prácticas DevOps. He liderado la automatización de procesos y la gestión
-                        de infraestructuras, tanto en entornos locales como en la nube, abarcando todas las
-                        etapas del ciclo de vida del software.
-                    </p>
-                    <p class="about-text">
-                        Mi experiencia incluye el diseño, desarrollo e implementación de soluciones empresariales
-                        robustas, asegurando que las tecnologías implementadas sean eficientes y estén alineadas
-                        con los objetivos estratégicos de negocio. Estoy comprometido con la mejora continua y
-                        la innovación en cada proyecto que emprendo.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="section skills" id="skills">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">02</span>
-                <h2 class="section-title">Áreas de Expertise</h2>
-            </div>
-            <div class="bento-grid">
-                <div class="bento-card bento-wide glass-card" id="skill-cloud">
-                    <div class="bento-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="bento-title">Cloud & DevOps</h3>
-                    <p class="bento-description">
-                        Automatización de infraestructura y despliegue continuo en entornos cloud.
-                    </p>
-                    <div class="tech-tags">
-                        <span class="tag">AWS</span>
-                        <span class="tag">Azure</span>
-                        <span class="tag">GitLab CI/CD</span>
-                        <span class="tag">Jenkins</span>
-                        <span class="tag">Terraform</span>
-                        <span class="tag">Ansible</span>
-                        <span class="tag">Docker</span>
-                        <span class="tag">Kubernetes</span>
-                        <span class="tag">Argo CD</span>
-                    </div>
-                </div>
-
-                <div class="bento-card glass-card" id="skill-fullstack">
-                    <div class="bento-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="16 18 22 12 16 6"></polyline>
-                            <polyline points="8 6 2 12 8 18"></polyline>
-                        </svg>
-                    </div>
-                    <h3 class="bento-title">Full-Stack Development</h3>
-                    <div class="tech-tags">
-                        <span class="tag">Angular</span>
-                        <span class="tag">React.js</span>
-                        <span class="tag">.NET Core</span>
-                        <span class="tag">NestJS</span>
-                        <span class="tag">Python</span>
-                        <span class="tag">Java</span>
-                        <span class="tag">PHP</span>
-                    </div>
-                </div>
-
-                <div class="bento-card glass-card" id="skill-databases">
-                    <div class="bento-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-                            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-                        </svg>
-                    </div>
-                    <h3 class="bento-title">Bases de Datos</h3>
-                    <div class="tech-tags">
-                        <span class="tag">SQL Server</span>
-                        <span class="tag">PostgreSQL</span>
-                        <span class="tag">MongoDB</span>
-                        <span class="tag">Modelamiento</span>
-                    </div>
-                </div>
-
-                <div class="bento-card bento-wide glass-card" id="skill-methods">
-                    <div class="bento-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                            <polyline points="2 17 12 22 22 17"></polyline>
-                            <polyline points="2 12 12 17 22 12"></polyline>
-                        </svg>
-                    </div>
-                    <h3 class="bento-title">Metodologías & Procesos</h3>
-                    <p class="bento-description">
-                        Gestión ágil con enfoque en entrega de valor y mejora continua.
-                    </p>
-                    <div class="tech-tags">
-                        <span class="tag">Agile</span>
-                        <span class="tag">Scrum</span>
-                        <span class="tag">DevSecOps</span>
-                        <span class="tag">ITIL</span>
-                        <span class="tag">GitOps</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Educación Continua Section -->
-    <section class="section credentials" id="credentials">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">03</span>
-                <h2 class="section-title">Educación Continua</h2>
-            </div>
-            <div class="credentials-grid">
-                <div class="credential-card glass-card">
-                    <div class="credential-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-                            <path d="M6 12v5c0 2 6 3 6 3s6-1 6-3v-5"></path>
-                        </svg>
-                    </div>
-                    <h3 class="credential-name">Maestro en DevOps</h3>
-                    <span class="credential-detail">Desarrollo y Operaciones de Software</span>
-                    <span class="credential-issuer">E.P. Newman · 2024–2025</span>
-                </div>
-                <div class="credential-card glass-card">
-                    <div class="credential-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <polyline points="16 18 22 12 16 6"></polyline>
-                            <polyline points="8 6 2 12 8 18"></polyline>
-                        </svg>
-                    </div>
-                    <h3 class="credential-name">Ingeniero de Sistemas e Informática</h3>
-                    <span class="credential-detail">Título profesional</span>
-                    <span class="credential-issuer">UTP · 2013–2016</span>
-                </div>
-                <div class="credential-card glass-card">
-                    <div class="credential-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="credential-name">DevSecOps</h3>
-                    <span class="credential-detail">Estrategias y herramientas para el desarrollo seguro</span>
-                    <span class="credential-issuer">UTEC – E. Posgrado · 2025</span>
-                </div>
-                <div class="credential-card glass-card">
-                    <div class="credential-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-                            <polyline points="2 17 12 22 22 17"></polyline>
-                            <polyline points="2 12 12 17 22 12"></polyline>
-                        </svg>
-                    </div>
-                    <h3 class="credential-name">Arquitectura de Soluciones Digitales</h3>
-                    <span class="credential-detail">Dirección Ejecutiva Continua</span>
-                    <span class="credential-issuer">U. de Lima · 2024</span>
-                </div>
-                <div class="credential-card glass-card">
-                    <div class="credential-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="10"></circle>
-                            <line x1="2" y1="12" x2="22" y2="12"></line>
-                            <path
-                                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
-                            </path>
-                        </svg>
-                    </div>
-                    <h3 class="credential-name">Cloud & DevOps</h3>
-                    <span class="credential-detail">Transformación Continua</span>
-                    <span class="credential-issuer">MIT Professional Education · 2023</span>
-                </div>
-                <div class="credential-card glass-card">
-                    <div class="credential-icon">
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="9" cy="7" r="4"></circle>
-                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-                        </svg>
-                    </div>
-                    <h3 class="credential-name">Metodologías Ágiles</h3>
-                    <span class="credential-detail">Diploma en Curso de Especialización</span>
-                    <span class="credential-issuer">E.P. Newman · 2025</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="section contact" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">04</span>
-                <h2 class="section-title">Conectemos</h2>
-            </div>
-            <div class="contact-content glass-card">
-                <p class="contact-text">
-                    Estoy abierto a explorar nuevas oportunidades donde pueda aplicar mi experiencia
-                    en Software y DevOps para contribuir al éxito de equipos innovadores.
-                </p>
-                <p class="contact-text highlight-text">
-                    ¿Tienes un proyecto interesante? ¡Hablemos!
-                </p>
-                <div class="contact-links">
-                    <a href="https://www.linkedin.com/in/danielquintanabedoya" target="_blank" rel="noopener noreferrer"
-                        class="contact-link-card">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                        </svg>
-                        <div>
-                            <span class="link-label">LinkedIn</span>
-                            <span class="link-handle">@danielquintanabedoya</span>
+                        <a href="#experiencia" class="btn-outline">Explorar trayectoria</a>
+                        <div class="quick-channels" aria-label="Perfiles profesionales">
+                            <a href="https://github.com/DanielQuintana90" target="_blank" rel="noopener noreferrer"
+                                class="channel-icon-link" aria-label="GitHub (@DanielQuintana90)" title="GitHub">
+                                <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                    <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                                </svg>
+                            </a>
+                            <a href="https://blog.quintanabedoya.com" target="_blank" rel="noopener noreferrer"
+                                class="channel-icon-link" aria-label="Blog técnico en Medium" title="Blog técnico">
+                                <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                    <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+                                </svg>
+                            </a>
                         </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: The Memorable Element — Interactive Production Pipeline Blueprint -->
+                <aside class="topology-console" aria-label="Arquitectura interactiva de entrega continua y nube">
+                    <div class="console-header">
+                        <div class="console-title-group">
+                            <span class="console-indicator" aria-hidden="true"></span>
+                            <h2 class="console-title">Topología de Arquitectura en Producción</h2>
+                        </div>
+                        <span class="console-hint">Selecciona una capa para inspeccionar</span>
+                    </div>
+
+                    <!-- Sequential 5-Stage Pipeline Selector -->
+                    <div class="pipeline-stages" role="tablist" aria-label="Etapas del ciclo de arquitectura">
+                        <button type="button" class="stage-node active" role="tab" aria-selected="true"
+                            aria-controls="stage-panel" data-stage="cicd">
+                            <span class="stage-step">01</span>
+                            <span class="stage-info">
+                                <span class="stage-name">CI/CD &amp; GitOps</span>
+                                <span class="stage-summary">GitLab CI, Jenkins, Azure DevOps, ArgoCD</span>
+                            </span>
+                            <span class="stage-status">Estándar</span>
+                        </button>
+
+                        <button type="button" class="stage-node" role="tab" aria-selected="false"
+                            aria-controls="stage-panel" data-stage="devsecops">
+                            <span class="stage-step">02</span>
+                            <span class="stage-info">
+                                <span class="stage-name">Seguridad DevSecOps</span>
+                                <span class="stage-summary">SonarQube, Trivy, OWASP ZAP, Vault</span>
+                            </span>
+                            <span class="stage-status">Automatizado</span>
+                        </button>
+
+                        <button type="button" class="stage-node" role="tab" aria-selected="false"
+                            aria-controls="stage-panel" data-stage="iac">
+                            <span class="stage-step">03</span>
+                            <span class="stage-info">
+                                <span class="stage-name">IaC &amp; Cloud Híbrido</span>
+                                <span class="stage-summary">Terraform, AWS, Azure, On-Premise</span>
+                            </span>
+                            <span class="stage-status">Reproducible</span>
+                        </button>
+
+                        <button type="button" class="stage-node" role="tab" aria-selected="false"
+                            aria-controls="stage-panel" data-stage="k8s">
+                            <span class="stage-step">04</span>
+                            <span class="stage-info">
+                                <span class="stage-name">Contenedores &amp; EKS</span>
+                                <span class="stage-summary">Kubernetes, Docker, Helm, HPA</span>
+                            </span>
+                            <span class="stage-status">Alta disp.</span>
+                        </button>
+
+                        <button type="button" class="stage-node" role="tab" aria-selected="false"
+                            aria-controls="stage-panel" data-stage="observability">
+                            <span class="stage-step">05</span>
+                            <span class="stage-info">
+                                <span class="stage-name">Observabilidad</span>
+                                <span class="stage-summary">Prometheus, Grafana, ELK Stack</span>
+                            </span>
+                            <span class="stage-status">Tiempo real</span>
+                        </button>
+                    </div>
+
+                    <!-- Live Inspection Readout Panel -->
+                    <div class="stage-inspector" id="stage-panel" role="tabpanel" aria-live="polite">
+                        <div class="inspector-meta">
+                            <span class="inspector-layer" id="inspector-layer">Capa 01 / Integración y Despliegue Continuo</span>
+                            <span class="inspector-metric" id="inspector-metric">Impacto: Horas a minutos</span>
+                        </div>
+                        <h3 class="inspector-heading" id="inspector-heading">
+                            Estandarización de flujos CI/CD para más de 20 equipos de ingeniería
+                        </h3>
+                        <p class="inspector-description" id="inspector-description">
+                            Diseño y prototipado de pipelines reutilizables para microservicios, frontends, aplicaciones
+                            móviles y sistemas heredados desplegados en AWS, Azure y servidores On-Premise.
+                        </p>
+                        <div class="inspector-tags" id="inspector-tags">
+                            <span class="mono-chip">GitLab CI</span>
+                            <span class="mono-chip">Jenkins</span>
+                            <span class="mono-chip">Azure DevOps</span>
+                            <span class="mono-chip">ArgoCD</span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <!-- PROFESSIONAL EXPERIENCE (TRAYECTORIA EN PRODUCCIÓN) -->
+        <section class="blueprint-section" id="experiencia" aria-labelledby="exp-heading">
+            <div class="blueprint-grid section-layout">
+                <div class="section-sidebar">
+                    <div class="sidebar-sticky">
+                        <h2 id="exp-heading" class="section-heading">Trayectoria en producción</h2>
+                        <p class="section-subtitle">
+                            Más de una década liderando la evolución desde el desarrollo empresarial full-stack hasta la
+                            arquitectura DevOps y Cloud a gran escala.
+                        </p>
+                        <nav class="timeline-index" aria-label="Índice de empresas">
+                            <a href="#role-minedu" class="timeline-link active">
+                                <span class="timeline-period">2022 — Actual</span>
+                                <span class="timeline-org">Ministerio de Educación</span>
+                            </a>
+                            <a href="#role-atria" class="timeline-link">
+                                <span class="timeline-period">2020 — 2022</span>
+                                <span class="timeline-org">Atria Energía S.A.C.</span>
+                            </a>
+                            <a href="#role-geoxpress" class="timeline-link">
+                                <span class="timeline-period">2020</span>
+                                <span class="timeline-org">Geoxpress Perú S.A.C.</span>
+                            </a>
+                            <a href="#role-deutsche" class="timeline-link">
+                                <span class="timeline-period">2014 — 2019</span>
+                                <span class="timeline-org">Deutsche Pharma S.A.C.</span>
+                            </a>
+                            <a href="#role-early" class="timeline-link">
+                                <span class="timeline-period">2012 — 2014</span>
+                                <span class="timeline-org">Joe Dayz &amp; Fuero Militar</span>
+                            </a>
+                        </nav>
+                    </div>
+                </div>
+
+                <div class="section-content experience-stream">
+                    <!-- 1. Ministerio de Educación -->
+                    <article class="experience-entry featured-entry" id="role-minedu">
+                        <header class="entry-header">
+                            <div class="entry-title-group">
+                                <span class="entry-status-pill">Rol actual</span>
+                                <h3 class="entry-role">Arquitecto DevOps</h3>
+                                <p class="entry-company">Ministerio de Educación</p>
+                            </div>
+                            <time class="entry-date">06/2022 — Actualidad</time>
+                        </header>
+
+                        <ul class="entry-achievements">
+                            <li>
+                                <strong>Arquitectura CI/CD a escala:</strong> Diseñé, prototipé y estandaricé
+                                arquitecturas de integración y despliegue continuo con GitLab CI y Jenkins para más de
+                                20 equipos de desarrollo y múltiples productos digitales (microservicios, frontends,
+                                móviles y aplicaciones heredadas) en entornos híbridos (AWS, Azure y On-Premise),
+                                reduciendo los tiempos de despliegue de horas a minutos.
+                            </li>
+                            <li>
+                                <strong>Infraestructura como Código (IaC):</strong> Automaticé el aprovisionamiento con
+                                Terraform para servicios de cómputo, redes, almacenamiento, mensajería y gestión de APIs
+                                en la nube (EKS, API Gateway, CloudFront, S3, ECR, SQS, SNS, entre otros componentes),
+                                garantizando entornos reproducibles y escalables.
+                            </li>
+                            <li>
+                                <strong>Orquestación de contenedores:</strong> Estandaricé la contenedorización con
+                                Docker (<em>multi-stage builds</em>) y la orquestación de microservicios en Kubernetes
+                                (EKS) mediante charts reutilizables de Helm, configurando políticas de autoescalado
+                                (HPA), Ingress Controllers, gestión de recursos y alta disponibilidad.
+                            </li>
+                            <li>
+                                <strong>Seguridad DevSecOps en pipelines:</strong> Implementé controles de seguridad
+                                automatizados mediante análisis estático de código con SonarQube, escaneo de
+                                vulnerabilidades en contenedores con Trivy y gestión centralizada de secretos con
+                                HashiCorp Vault.
+                            </li>
+                            <li>
+                                <strong>Habilitación técnica y observabilidad:</strong> Lideré el acompañamiento técnico
+                                para más de 20 equipos ágiles, resolviendo observaciones de arquitectura, configuración
+                                y monitoreo unificado (Prometheus, Grafana, ELK Stack) en desarrollo, calidad y
+                                producción.
+                            </li>
+                        </ul>
+
+                        <footer class="entry-stack" aria-label="Tecnologías utilizadas">
+                            <span class="mono-chip">GitLab CI</span>
+                            <span class="mono-chip">Jenkins</span>
+                            <span class="mono-chip">Terraform</span>
+                            <span class="mono-chip">Kubernetes (EKS)</span>
+                            <span class="mono-chip">Docker</span>
+                            <span class="mono-chip">Helm</span>
+                            <span class="mono-chip">AWS</span>
+                            <span class="mono-chip">Azure</span>
+                            <span class="mono-chip">SonarQube</span>
+                            <span class="mono-chip">Trivy</span>
+                            <span class="mono-chip">HashiCorp Vault</span>
+                            <span class="mono-chip">Prometheus</span>
+                            <span class="mono-chip">Grafana</span>
+                            <span class="mono-chip">ELK Stack</span>
+                        </footer>
+                    </article>
+
+                    <!-- 2. Atria Energía -->
+                    <article class="experience-entry" id="role-atria">
+                        <header class="entry-header">
+                            <div class="entry-title-group">
+                                <h3 class="entry-role">Desarrollador Funcional de Proyectos de Tecnología</h3>
+                                <p class="entry-company">Atria Energía S.A.C.</p>
+                            </div>
+                            <time class="entry-date">12/2020 — 04/2022</time>
+                        </header>
+
+                        <div class="project-subgrid">
+                            <div class="project-block">
+                                <h4 class="project-name">Proyecto: Atria Workplace</h4>
+                                <ul class="entry-achievements">
+                                    <li>
+                                        Diseñé y desarrollé la intranet corporativa para el área de Talento integrando
+                                        Microsoft Graph API, e implementé pipelines de CI/CD en Azure DevOps para
+                                        automatizar los despliegues.
+                                    </li>
+                                </ul>
+                                <div class="entry-stack">
+                                    <span class="mono-chip">.NET Core</span>
+                                    <span class="mono-chip">Angular</span>
+                                    <span class="mono-chip">SQL Server</span>
+                                    <span class="mono-chip">Azure DevOps</span>
+                                    <span class="mono-chip">Microsoft Graph API</span>
+                                </div>
+                            </div>
+
+                            <div class="project-block">
+                                <h4 class="project-name">Proyecto: Sistema Integral de Gestión de Coberturas</h4>
+                                <ul class="entry-achievements">
+                                    <li>
+                                        Automaticé el proceso de distribución de energía del proveedor y la asignación a
+                                        clientes finales, optimizando la operatividad comercial y minimizando el costo
+                                        total de operación.
+                                    </li>
+                                    <li>
+                                        Contenedoricé los servicios de la plataforma con Docker e implementé flujos de
+                                        integración y entrega continua en Azure DevOps.
+                                    </li>
+                                </ul>
+                                <div class="entry-stack">
+                                    <span class="mono-chip">PHP (Symfony)</span>
+                                    <span class="mono-chip">Python (Flask)</span>
+                                    <span class="mono-chip">Power BI</span>
+                                    <span class="mono-chip">Docker</span>
+                                    <span class="mono-chip">Azure DevOps</span>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 3. Geoxpress Perú -->
+                    <article class="experience-entry" id="role-geoxpress">
+                        <header class="entry-header">
+                            <div class="entry-title-group">
+                                <h3 class="entry-role">Analista Programador de Sistemas Senior</h3>
+                                <p class="entry-company">Geoxpress Perú S.A.C. (Proyecto GX)</p>
+                            </div>
+                            <time class="entry-date">02/2020 — 05/2020</time>
+                        </header>
+
+                        <ul class="entry-achievements">
+                            <li>
+                                Desarrollé los módulos críticos de Volanteo, Discrepancias y Coordinaciones para la
+                                operación logística del banco Interbank, automatizando los despliegues mediante
+                                pipelines en Azure DevOps.
+                            </li>
+                            <li>
+                                Implementé la integración con el proveedor de mensajería (SMS) para automatizar la
+                                coordinación y seguimiento de entregas en línea.
+                            </li>
+                        </ul>
+
+                        <footer class="entry-stack">
+                            <span class="mono-chip">.NET Core</span>
+                            <span class="mono-chip">Angular</span>
+                            <span class="mono-chip">SQL Server</span>
+                            <span class="mono-chip">Azure DevOps</span>
+                        </footer>
+                    </article>
+
+                    <!-- 4. Deutsche Pharma -->
+                    <article class="experience-entry" id="role-deutsche">
+                        <header class="entry-header">
+                            <div class="entry-title-group">
+                                <h3 class="entry-role">Analista Programador Senior</h3>
+                                <p class="entry-company">Deutsche Pharma S.A.C.</p>
+                            </div>
+                            <time class="entry-date">06/2014 — 10/2019</time>
+                        </header>
+
+                        <ul class="entry-achievements">
+                            <li>
+                                Analicé, diseñé e implementé sistemas de gestión y automatización para almacenes,
+                                logística, control de marcas y registros sanitarios.
+                            </li>
+                            <li>
+                                Lideré la reimplementación del ERP DatCorp y participé en la evaluación técnica y
+                                selección de proveedores de software y hardware.
+                            </li>
+                            <li>
+                                Ejecuté la migración y regularización de licenciamiento de sistemas operativos y
+                                servidores de base de datos SQL Server.
+                            </li>
+                        </ul>
+
+                        <footer class="entry-stack">
+                            <span class="mono-chip">ASP.NET (MVC, Web Forms)</span>
+                            <span class="mono-chip">WCF</span>
+                            <span class="mono-chip">SQL Server</span>
+                        </footer>
+                    </article>
+
+                    <!-- 5. Early Career (2012 - 2014) -->
+                    <article class="experience-entry early-career-entry" id="role-early">
+                        <header class="entry-header">
+                            <div class="entry-title-group">
+                                <h3 class="entry-role">Inicios en Ingeniería de Software y Bases de Datos</h3>
+                                <p class="entry-company">Joe Dayz E.I.R.L. &amp; Fuero Militar Policial</p>
+                            </div>
+                            <time class="entry-date">01/2012 — 04/2014</time>
+                        </header>
+
+                        <div class="early-roles-grid">
+                            <div class="early-role-item">
+                                <div class="early-role-head">
+                                    <strong>Joe Dayz E.I.R.L.</strong>
+                                    <span class="early-role-meta">Analista Desarrollador | 01/2014 — 04/2014</span>
+                                </div>
+                                <p>
+                                    Desarrollé e implementé la plataforma web de JoeDayz Academy utilizando Python y
+                                    Django.
+                                </p>
+                            </div>
+
+                            <div class="early-role-item">
+                                <div class="early-role-head">
+                                    <strong>Fuero Militar Policial</strong>
+                                    <span class="early-role-meta">Analista Programador | 01/2012 — 12/2013</span>
+                                </div>
+                                <p>
+                                    Desarrollé sistemas jurídicos y administrativos, realizando el modelamiento y
+                                    administración de bases de datos con .NET Framework y SQL Server.
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- TECHNICAL CAPABILITIES MATRIX -->
+        <section class="blueprint-section" id="capacidades" aria-labelledby="cap-heading">
+            <div class="blueprint-grid section-layout">
+                <div class="section-sidebar">
+                    <div class="sidebar-sticky">
+                        <h2 id="cap-heading" class="section-heading">Arquitectura y capacidades técnicas</h2>
+                        <p class="section-subtitle">
+                            Dominio integral desde la infraestructura cloud y seguridad en pipelines hasta el desarrollo
+                            full-stack y modelamiento de datos.
+                        </p>
+                        <div class="practices-box">
+                            <h3 class="practices-title">Prácticas clave</h3>
+                            <ul class="practices-list">
+                                <li>Arquitectura de Soluciones Cloud</li>
+                                <li>DevOps &amp; Automatización de Despliegues</li>
+                                <li>Seguridad Integrada (DevSecOps)</li>
+                                <li>GitOps &amp; Infraestructura Inmutable</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-content capabilities-matrix">
+                    <div class="cap-cell">
+                        <div class="cap-header">
+                            <h3 class="cap-title">Cloud &amp; Entornos Híbridos</h3>
+                            <span class="cap-domain">Infraestructura</span>
+                        </div>
+                        <p class="cap-desc">
+                            Diseño y operación de arquitecturas escalables en nubes públicas y centros de datos locales
+                            (EKS, API Gateway, CloudFront, S3, ECR, SQS, SNS).
+                        </p>
+                        <div class="cap-tags">
+                            <span class="mono-chip">AWS</span>
+                            <span class="mono-chip">Microsoft Azure</span>
+                            <span class="mono-chip">Entornos Híbridos / On-Premise</span>
+                        </div>
+                    </div>
+
+                    <div class="cap-cell">
+                        <div class="cap-header">
+                            <h3 class="cap-title">CI/CD y GitOps</h3>
+                            <span class="cap-domain">Entrega Continua</span>
+                        </div>
+                        <p class="cap-desc">
+                            Estandarización de flujos de integración y despliegue automatizado para múltiples equipos y
+                            productos digitales.
+                        </p>
+                        <div class="cap-tags">
+                            <span class="mono-chip">GitLab CI</span>
+                            <span class="mono-chip">Jenkins</span>
+                            <span class="mono-chip">Azure DevOps</span>
+                            <span class="mono-chip">ArgoCD</span>
+                        </div>
+                    </div>
+
+                    <div class="cap-cell">
+                        <div class="cap-header">
+                            <h3 class="cap-title">IaC, Contenedores y Orquestación</h3>
+                            <span class="cap-domain">Plataforma</span>
+                        </div>
+                        <p class="cap-desc">
+                            Aprovisionamiento declarativo, construcción multi-stage y orquestación de microservicios con
+                            autoescalado (HPA) y alta disponibilidad.
+                        </p>
+                        <div class="cap-tags">
+                            <span class="mono-chip">Terraform</span>
+                            <span class="mono-chip">Kubernetes (EKS)</span>
+                            <span class="mono-chip">Docker</span>
+                            <span class="mono-chip">Helm</span>
+                        </div>
+                    </div>
+
+                    <div class="cap-cell">
+                        <div class="cap-header">
+                            <h3 class="cap-title">Seguridad y Calidad (DevSecOps)</h3>
+                            <span class="cap-domain">SecOps</span>
+                        </div>
+                        <p class="cap-desc">
+                            Análisis estático de código (SAST), escaneo de vulnerabilidades en imágenes y gestión
+                            centralizada de secretos en cada ejecución del pipeline.
+                        </p>
+                        <div class="cap-tags">
+                            <span class="mono-chip">SonarQube</span>
+                            <span class="mono-chip">Trivy</span>
+                            <span class="mono-chip">OWASP ZAP</span>
+                            <span class="mono-chip">HashiCorp Vault</span>
+                        </div>
+                    </div>
+
+                    <div class="cap-cell">
+                        <div class="cap-header">
+                            <h3 class="cap-title">Monitoreo y Observabilidad</h3>
+                            <span class="cap-domain">Telemetría</span>
+                        </div>
+                        <p class="cap-desc">
+                            Métricas de infraestructura, tableros operativos y centralización de logs para diagnóstico y
+                            observabilidad en desarrollo, QA y producción.
+                        </p>
+                        <div class="cap-tags">
+                            <span class="mono-chip">Prometheus</span>
+                            <span class="mono-chip">Grafana</span>
+                            <span class="mono-chip">ELK Stack</span>
+                        </div>
+                    </div>
+
+                    <div class="cap-cell">
+                        <div class="cap-header">
+                            <h3 class="cap-title">Lenguajes, Frameworks y Datos</h3>
+                            <span class="cap-domain">Ingeniería de Software</span>
+                        </div>
+                        <p class="cap-desc">
+                            Base sólida en construcción de backends empresariales, APIs, aplicaciones frontend y
+                            administración de motores relacionales y NoSQL.
+                        </p>
+                        <div class="cap-tags">
+                            <span class="mono-chip">.NET / .NET Core</span>
+                            <span class="mono-chip">Java</span>
+                            <span class="mono-chip">NestJS</span>
+                            <span class="mono-chip">Python (Flask, Django)</span>
+                            <span class="mono-chip">PHP (Symfony)</span>
+                            <span class="mono-chip">Angular</span>
+                            <span class="mono-chip">React</span>
+                            <span class="mono-chip">PostgreSQL</span>
+                            <span class="mono-chip">SQL Server</span>
+                            <span class="mono-chip">MongoDB</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION, CERTIFICATIONS & LANGUAGES -->
+        <section class="blueprint-section" id="formacion" aria-labelledby="edu-heading">
+            <div class="blueprint-grid section-layout">
+                <div class="section-sidebar">
+                    <div class="sidebar-sticky">
+                        <h2 id="edu-heading" class="section-heading">Formación de posgrado y certificaciones</h2>
+                        <p class="section-subtitle">
+                            Actualización académica continua en arquitectura de software a gran escala, DevSecOps, IA e
+                            ingeniería cloud.
+                        </p>
+
+                        <div class="languages-panel" aria-label="Idiomas">
+                            <h3 class="practices-title">Idiomas</h3>
+                            <dl class="language-list">
+                                <div class="language-row">
+                                    <dt>Español</dt>
+                                    <dd>Nativo</dd>
+                                </div>
+                                <div class="language-row">
+                                    <dt>Portugués</dt>
+                                    <dd>Avanzado</dd>
+                                </div>
+                                <div class="language-row">
+                                    <dt>Inglés</dt>
+                                    <dd>Intermedio</dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="section-content credentials-column">
+                    <!-- Academic Degrees -->
+                    <div class="credential-group">
+                        <h3 class="group-label">Grados Académicos y Posgrado</h3>
+                        <div class="degree-list">
+                            <article class="degree-item">
+                                <span class="degree-year">2025</span>
+                                <div class="degree-body">
+                                    <h4 class="degree-title">Maestro en Desarrollo y Operaciones de Software — DevOps</h4>
+                                    <p class="degree-institution">Escuela de Posgrado Newman</p>
+                                </div>
+                            </article>
+
+                            <article class="degree-item">
+                                <span class="degree-year">2020</span>
+                                <div class="degree-body">
+                                    <h4 class="degree-title">Diplomado en Informática con Mención en Ingeniería de Software</h4>
+                                    <p class="degree-institution">Pontificia Universidad Católica del Perú (PUCP)</p>
+                                </div>
+                            </article>
+
+                            <article class="degree-item">
+                                <span class="degree-year">2016</span>
+                                <div class="degree-body">
+                                    <h4 class="degree-title">Ingeniero de Sistemas e Informática</h4>
+                                    <p class="degree-institution">Universidad Tecnológica del Perú (UTP) — Ingeniero Colegiado CIP</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <!-- Executive Courses & Certifications -->
+                    <div class="credential-group">
+                        <h3 class="group-label">Programas de Especialización y Certificados</h3>
+                        <div class="cert-grid">
+                            <article class="cert-item cert-recent">
+                                <div class="cert-meta">
+                                    <span class="cert-year">2026</span>
+                                    <span class="cert-issuer">Full Cycle</span>
+                                </div>
+                                <h4 class="cert-title">
+                                    Full Cycle 4.0: Arquitectura de Software, DevOps e IA para Aplicaciones de Gran Escala
+                                </h4>
+                            </article>
+
+                            <article class="cert-item">
+                                <div class="cert-meta">
+                                    <span class="cert-year">2025</span>
+                                    <span class="cert-issuer">UTEC — Escuela de Posgrado</span>
+                                </div>
+                                <h4 class="cert-title">
+                                    DevSecOps: Estrategias y herramientas para el desarrollo seguro
+                                </h4>
+                            </article>
+
+                            <article class="cert-item">
+                                <div class="cert-meta">
+                                    <span class="cert-year">2024</span>
+                                    <span class="cert-issuer">Universidad de Lima</span>
+                                </div>
+                                <h4 class="cert-title">
+                                    Arquitectura de Soluciones Digitales
+                                </h4>
+                            </article>
+
+                            <article class="cert-item">
+                                <div class="cert-meta">
+                                    <span class="cert-year">2023</span>
+                                    <span class="cert-issuer">MIT Professional Education</span>
+                                </div>
+                                <h4 class="cert-title">
+                                    Cloud &amp; DevOps: Transformación Continua
+                                </h4>
+                            </article>
+
+                            <article class="cert-item">
+                                <div class="cert-meta">
+                                    <span class="cert-year">2022</span>
+                                    <span class="cert-issuer">Galaxy Training</span>
+                                </div>
+                                <h4 class="cert-title">
+                                    Curso de especialización: Arquitecto de Soluciones AWS — Associate
+                                </h4>
+                            </article>
+
+                            <article class="cert-item">
+                                <div class="cert-meta">
+                                    <span class="cert-year">2020</span>
+                                    <span class="cert-issuer">Microsoft</span>
+                                </div>
+                                <h4 class="cert-title">
+                                    Curso AZ-204: Developing Solutions For Microsoft Azure
+                                </h4>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHANNELS & PROFESSIONAL CONTACT (Privacy-first: No email or phone exposed) -->
+        <section class="blueprint-section contact-section" id="contacto" aria-labelledby="contact-heading">
+            <div class="blueprint-grid contact-grid">
+                <div class="contact-statement">
+                    <h2 id="contact-heading" class="contact-headline">
+                        ¿Conversamos sobre arquitectura Cloud, DevSecOps o plataformas a escala?
+                    </h2>
+                    <p class="contact-copy">
+                        Estoy disponible para colaborar en iniciativas de arquitectura de soluciones, transformación
+                        DevOps y liderazgo técnico. Conecta conmigo directamente a través de mis canales profesionales.
+                    </p>
+                </div>
+
+                <div class="channels-list">
+                    <a href="https://www.linkedin.com/in/danielquintanabedoya" target="_blank"
+                        rel="noopener noreferrer" class="channel-row">
+                        <div class="channel-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </div>
+                        <div class="channel-text">
+                            <span class="channel-name">LinkedIn</span>
+                            <span class="channel-handle">linkedin.com/in/danielquintanabedoya</span>
+                        </div>
+                        <span class="channel-action">Mensaje directo</span>
                     </a>
+
                     <a href="https://github.com/DanielQuintana90" target="_blank" rel="noopener noreferrer"
-                        class="contact-link-card">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
-                        </svg>
-                        <div>
-                            <span class="link-label">GitHub</span>
-                            <span class="link-handle">@DanielQuintana90</span>
+                        class="channel-row">
+                        <div class="channel-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+                            </svg>
                         </div>
+                        <div class="channel-text">
+                            <span class="channel-name">GitHub</span>
+                            <span class="channel-handle">github.com/DanielQuintana90</span>
+                        </div>
+                        <span class="channel-action">Repositorios</span>
                     </a>
+
                     <a href="https://blog.quintanabedoya.com" target="_blank" rel="noopener noreferrer"
-                        class="contact-link-card">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z" />
-                        </svg>
-                        <div>
-                            <span class="link-label">Blog</span>
-                            <span class="link-handle">blog.quintanabedoya.com</span>
+                        class="channel-row">
+                        <div class="channel-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+                            </svg>
                         </div>
+                        <div class="channel-text">
+                            <span class="channel-name">Publicaciones Técnicas</span>
+                            <span class="channel-handle">blog.quintanabedoya.com</span>
+                        </div>
+                        <span class="channel-action">Leer artículos</span>
                     </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-inner">
-                <p class="footer-text">
-                    © <span id="current-year"></span> Daniel Quintana. Hecho con ❤️ y ☕
-                </p>
-                <p class="footer-credit">
-                    Diseñado con pasión desde Perú 🇵🇪
-                </p>
-            </div>
+    <footer class="site-footer">
+        <div class="footer-frame">
+            <p class="footer-copy">
+                © <span id="current-year">2026</span> Daniel André Quintana Bedoya. DevOps &amp; Cloud Solutions Architect.
+            </p>
+            <p class="footer-meta">
+                Lima, Perú — Arquitectura Cloud, DevSecOps &amp; Ingeniería de Software
+            </p>
         </div>
     </footer>
 
