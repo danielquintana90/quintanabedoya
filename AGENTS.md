@@ -51,3 +51,4 @@ Cualquier modificación en [`index.html`](index.html), [`css/site.css`](css/site
 1. Sintaxis limpia en JavaScript (`node --check scripts/site.js`) y balance de llaves en CSS.
 2. Ausencia total de desbordamiento horizontal (`document.documentElement.scrollWidth <= window.innerWidth`) tanto en Desktop (`1440px`) como en Mobile (`390px`).
 3. Contraste y legibilidad en ambos temas (`html.dark-mode` y modo claro).
+
