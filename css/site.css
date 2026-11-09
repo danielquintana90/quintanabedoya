@@ -336,6 +336,12 @@ html.dark-mode .icon-moon {
     flex-shrink: 0;
 }
 
+.portrait-picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
 .portrait-img {
     width: 100%;
     height: 100%;

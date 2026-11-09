@@ -115,9 +115,16 @@
                 <div class="hero-dossier">
                     <div class="dossier-identity">
                         <figure class="portrait-frame">
-                            <img src="images/danielquintana-informal.jpg"
-                                alt="Retrato de Daniel André Quintana Bedoya"
-                                width="88" height="88" class="portrait-img" fetchpriority="high">
+                            <picture class="portrait-picture">
+                                <source type="image/webp"
+                                    srcset="images/danielquintana-informal-148.webp 148w, images/danielquintana-informal-296.webp 296w"
+                                    sizes="74px">
+                                <img src="images/danielquintana-informal.jpg"
+                                    srcset="images/danielquintana-informal-148.jpg 148w, images/danielquintana-informal.jpg 296w"
+                                    sizes="74px"
+                                    alt="Retrato de Daniel André Quintana Bedoya"
+                                    width="74" height="74" class="portrait-img" fetchpriority="high" decoding="async">
+                            </picture>
                             <span class="frame-corner corner-tl" aria-hidden="true"></span>
                             <span class="frame-corner corner-br" aria-hidden="true"></span>
                         </figure>
